@@ -1,13 +1,9 @@
-.main-index {
-    width: 100%;
-}
-
 .main_index {
     width: 100%;
     display: grid;
+    height: fit-content;
     grid-template-columns: 1fr;
-    padding-top: 1vw;
-    row-gap: 0.5vw;
+    row-gap: 100px;
 }
 
 .main_index_1 {
@@ -25,7 +21,6 @@
 .img_main_index_2 {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-
     gap: 0.5vw;
 }
 
@@ -49,8 +44,9 @@
 
 .main_index_2 h3 {
     color: black;
-    font-size: 6vw;
+    font-size: 4vw;
     font-weight: bold;
+    border-bottom: 0.1vw solid rgba(128, 128, 128, 0.329);
 
 }
 
@@ -61,11 +57,18 @@
     text-align: center;
 }
 
+.img_main_index_3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2%;
+}
+
 
 .main_index_3 h3 {
     color: black;
-    font-size: 6vw;
+    font-size: 4vw;
     font-weight: bold;
+    border-bottom: 0.1vw solid rgba(128, 128, 128, 0.329);
 }
 
 .main_index_1 img {
