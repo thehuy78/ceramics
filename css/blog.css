@@ -1,0 +1,11 @@
+.content_main_blog {
+    font-size: 1vw;
+    margin-left: 20%;
+    padding: 2vw 0;
+    width: 60%;
+}
+
+.content_main_blog h3,
+.kb {
+    padding-top: 2vw;
+}

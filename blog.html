@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="css/outline.css">
+    <link rel="stylesheet" href="css/blog.css">
     <script src="javascript/outline.js"></script>
 </head>
 
@@ -17,11 +18,41 @@
     <div class="container-index">
         <div class="header">
         </div>
-        <div class="main main-index">
+        <div class="main">
+            <div class="content_main_blog"></div>
+
         </div>
         <div class="footer">
         </div>
     </div>
 </body>
+<script>
+
+
+    $(document).ready(function () {
+        var data = [];
+        $.getJSON("json/blog.json", function (item) {
+            data = item
+            contentblog(data)
+        })
+        function contentblog(item) {
+            var s = []
+            var json = []
+            for (let i = 0; i < item.length; i++) {
+                json = item[i]
+            }
+            s.push(`
+            <div>${json.title}</div>
+         <div>${json.p1}</div>
+         <div>${json.p2}</div>
+         <div>${json.p3}</div>
+         <div>${json.p4}</div>
+         <div class="kb">${json.p5}</div>
+            `)
+            $(".content_main_blog").html(s.join(" "));
+        }
+    })
+
+</script>
 
 </html>
