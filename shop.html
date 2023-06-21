@@ -11,6 +11,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="css/outline.css">
     <link rel="stylesheet" href="css/shop.css">
+    <link rel="stylesheet" href="css/responsive.css">
     <script src="javascript/outline.js"></script>
 </head>
 
@@ -45,6 +46,31 @@
             </div>
         </div>
         <div class="main">
+            <div class="nav_product">
+                <ul class="u1">
+                    <li class="all">All Products</li>
+                    <li class="l1">Vase
+                        <ul class="u2">
+                            <li class="l2">Ceramic Vase</li>
+                            <li class="l2">Seed Jar</li>
+                        </ul>
+                    </li>
+                    <li class="l1">Cup
+                        <ul class="u2">
+                            <li class="l2">Porcelain Cup</li>
+                            <li class="l2">Lustreware Cup</li>
+                            <li class="l2">Glazed Earthenware Cup</li>
+                        </ul>
+                    </li>
+                    <li class="l1">Decorative Ceramics
+                        <ul class="u2">
+                            <li class="l2">Fossil</li>
+                            <li class="l2">Ancient pottery</li>
+                            <li class="l2">Quartz Ceramic</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
             <div id="main_product"></div>
             <div class="btn_current_page">
                 <button class="btn_back"><i class="fa-solid fa-angles-left"></i></button>
@@ -136,8 +162,8 @@
                 html += '<span class="rate"><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i></span>'
                 html += '</div>'
                 html += '<div class="button_product">'
-                html += '<button>Mua Ngay</button>'
-                html += '<button>Thêm vào giỏ hàng</button>'
+                html += '<button class="order">Mua Ngay</button>'
+                html += '<button class="add_shop">Thêm vào giỏ hàng</button>'
                 html += '</div>'
                 html += '<span class="view"> Lượt xem: 2160 </span>'
                 html += '</div>'
@@ -180,8 +206,45 @@
         renderProduct()
     })
 
+    let l1 = document.querySelectorAll(".l1");
+    let u2 = document.querySelectorAll(".u2");
+    let activeIndex = null;
+
+    function showlist(index) {
+        if (window.innerWidth > 568) {
+            if (activeIndex === index) {
+                u2[index].style.display = "block";
+                activeIndex = null;
+            } else {
+                u2[index].style.display = "none";
+                activeIndex = index;
+            }
+        } else {
+            if (activeIndex === index) {
+                u2[index].style.display = "none";
+                activeIndex = null;
+            } else {
+                if (activeIndex !== null) {
+                    u2[activeIndex].style.display = "none";
+                }
+                u2[index].style.display = "block";
+                activeIndex = index;
+            }
+        }
+    }
+    for (let i = 0; i < l1.length; i++) {
+        l1[i].addEventListener("click", function () {
+            showlist(i);
+        });
+    }
 
 
+    // Ngăn sự kiện lan truyền từ phần tử con lên phần tử cha
+    for (let i = 0; i < u2.length; i++) {
+        u2[i].addEventListener("click", function (event) {
+            event.stopPropagation();
+        });
+    }
 </script>
 
 </html>

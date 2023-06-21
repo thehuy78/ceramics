@@ -1,0 +1,129 @@
+@media screen and (max-width: 867px) {
+    #main_product {
+        grid-area: pro;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        padding: 2vw;
+    }
+}
+
+@media screen and (max-width: 568px) {
+    .main {
+        display: grid;
+        grid-template-columns: 1fr 6fr;
+        grid-template-areas:
+            "nav nav"
+            "pro pro"
+            "nextpage nextpage";
+        gap: 20px;
+    }
+
+    #main_product {
+        grid-area: pro;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        padding: 2vw;
+    }
+
+    .btn_current_page {
+        grid-area: nextpage;
+    }
+
+    .nav_product {
+        grid-area: nav;
+        overflow: hidden;
+        padding: 2vw 0 0 2vw;
+
+    }
+
+    .u1 {
+        display: flex;
+
+    }
+
+    .all,
+    .l1 {
+        width: 25%;
+        padding: 0 3vw;
+        /* background-color: rgb(254, 48, 48);
+        border: 2px solid rebeccapurple; */
+        font-size: 2vw;
+
+    }
+
+    .u2 {
+        display: none;
+
+    }
+
+    .l2 {
+        font-size: 2vw;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .main {
+        display: grid;
+        grid-template-columns: 1fr 6fr;
+        grid-template-areas:
+            "nav nav"
+            "pro pro"
+            "nextpage nextpage";
+        gap: 20px;
+    }
+
+    #main_product {
+        grid-area: pro;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 2vw;
+    }
+
+    .btn_current_page {
+        grid-area: nextpage;
+    }
+
+    .nav_product {
+        grid-area: nav;
+        overflow: hidden;
+        padding: 2vw 0 0 2vw;
+        width: 60%;
+
+    }
+
+    .u1 {
+        display: flex;
+
+        /* justify-content: space-between; */
+
+    }
+
+    .all,
+    .l1 {
+        padding: 0 2vw;
+        background-color: rgb(254, 48, 48);
+        border: 2px solid rebeccapurple;
+        font-size: 2vw;
+
+    }
+
+    .l1 {
+        padding: 0 2vw;
+        background-color: rgb(254, 48, 48);
+        border: 2px solid rebeccapurple;
+        font-size: 2vw;
+
+    }
+
+    .u2 {
+        display: none;
+
+    }
+
+    .l2 {
+        font-size: 2vw;
+    }
+}
